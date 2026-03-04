@@ -114,7 +114,7 @@ function renderDocsPage(config) {
             </a>
             <div class="docs-nav-links">
                 <a href="index.html"><img src="../assets/gitbook.svg" alt="" class="docs-nav-icon">Docs</a>
-                <a href="https://discord.gg/your-invite" target="_blank"><img src="../assets/discord.svg" alt="" class="docs-nav-icon">Discord</a>
+                <a href="https://discord.gg/An7aEc3Stc" target="_blank"><img src="../assets/discord.svg" alt="" class="docs-nav-icon">Discord</a>
             </div>
         </nav>
         <div class="docs-layout">
@@ -139,7 +139,7 @@ function renderDocsPage(config) {
                 <span>222</span>
                 <div class="docs-footer-nav">
                     <a href="../index.html">Home</a>
-                    <a href="https://discord.gg/your-invite" target="_blank">Discord</a>
+                    <a href="https://discord.gg/An7aEc3Stc" target="_blank">Discord</a>
                 </div>
             </div>
         </div>
