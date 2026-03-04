@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Accounts — 222 Docs</title>
+    <link rel="icon" type="image/png" href="../assets/222-image.png">
+    <link rel="stylesheet" href="docs.css">
+</head>
+<body>
+    <div id="docs-app"></div>
+    <script src="template.js"></script>
+    <script>
+    renderDocsPage({
+        content: `
+            <h1>Trading Accounts</h1>
+            <p class="subtitle">Manage your Solana wallets — generate, import, group, and multi-wallet trade.</p>
+
+            <h2>Generating Wallets</h2>
+            <p>Click <strong>Generate Wallet</strong> to create a new Solana wallet. The private key is generated locally using your browser's Web Crypto API and stored encrypted. No keys ever leave your machine. You can hold up to <strong>20 wallets</strong>.</p>
+
+            <h2>Importing Wallets</h2>
+            <p>Click <strong>Import Wallet</strong> and paste an existing Solana private key (base58 format). The key is encrypted and stored locally in your browser.</p>
+
+            <h2>Wallet List</h2>
+            <p>Each wallet shows:</p>
+            <ul>
+                <li><strong>Wallet name</strong> — click to rename (max 10 characters)</li>
+                <li><strong>Public key</strong> — truncated, click to copy full address</li>
+                <li><strong>SOL balance</strong> — auto-refreshes</li>
+                <li><strong>Selection checkbox</strong> — check wallets you want to trade with</li>
+            </ul>
+
+            <h3>Wallet Actions</h3>
+            <ul>
+                <li><strong>Rename</strong> — click the wallet name</li>
+                <li><strong>Export Key</strong> — view and copy the private key</li>
+                <li><strong>Delete</strong> — remove the wallet (irreversible without a backup)</li>
+                <li><strong>Drag to reorder</strong> — drag wallets to change their position</li>
+            </ul>
+
+            <blockquote>
+                <p>Always back up your private keys. If you uninstall the extension or clear browser data, your wallets are gone.</p>
+            </blockquote>
+
+            <h2>Wallet Groups</h2>
+            <p>Wallet Groups let you save a selection of wallets for quick switching. Up to <strong>5 groups</strong>.</p>
+            <ul>
+                <li>Each group remembers which wallets are selected</li>
+                <li>Click a group to instantly switch your active wallet selection</li>
+                <li>Assign a <strong>color</strong> to each group (8 options)</li>
+            </ul>
+
+            <h3>Show in Axiom Header</h3>
+            <p>The <strong>"Show wallet groups in Axiom header"</strong> toggle displays your wallet groups as clickable buttons directly in the Axiom navigation bar so you can switch groups without opening the 222 popup.</p>
+
+            <h2>Multi-Wallet Trading</h2>
+            <p>Select multiple wallets and they'll all execute trades simultaneously. Combined with the <strong>Split Buy Amount</strong> toggle in Preset Details:</p>
+            <ul>
+                <li><strong>Split ON</strong> — total buy amount is divided equally across selected wallets</li>
+                <li><strong>Split OFF</strong> — each wallet buys the full amount independently</li>
+            </ul>
+        `
+    });
+    </script>
+</body>
+</html>

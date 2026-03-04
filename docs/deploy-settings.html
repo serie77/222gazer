@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deploy Settings — 222 Docs</title>
+    <link rel="icon" type="image/png" href="../assets/222-image.png">
+    <link rel="stylesheet" href="docs.css">
+</head>
+<body>
+    <div id="docs-app"></div>
+    <script src="template.js"></script>
+    <script>
+    renderDocsPage({
+        content: `
+            <h1>Deploy Settings</h1>
+            <p class="subtitle">Flash Deploy, buy amounts, instant deploy presets, and vamp buttons.</p>
+
+            <h2>Buy Amounts</h2>
+            <table>
+                <thead>
+                    <tr><th>Field</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Main Buy Amount (SOL)</strong></td><td>Default SOL amount for your primary buy button on the trade bar</td></tr>
+                    <tr><td><strong>Secondary Amount (SOL)</strong></td><td>Alternate SOL amount for multi-deploy strategies</td></tr>
+                    <tr><td><strong>Main Buy Amount (USD1)</strong></td><td>Default buy amount in USD1 — used when trading USD1 LaunchLab tokens</td></tr>
+                    <tr><td><strong>Secondary Amount (USD1)</strong></td><td>Alternate USD1 amount for multi-deploy strategies</td></tr>
+                </tbody>
+            </table>
+
+            <h2>Instant Deploy Presets</h2>
+            <p>Three quick-buy buttons on the trade bar for each platform. Set three different amounts so you can one-click buy at different sizes.</p>
+
+            <table>
+                <thead>
+                    <tr><th>Platform</th><th>Currency</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><img src="../assets/pump.svg" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;border-radius:4px"><strong>Pump</strong></td><td>SOL</td><td>PumpFun and PumpSwap tokens</td></tr>
+                    <tr><td><img src="../assets/bonk.svg" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;border-radius:4px"><strong>Bonk</strong></td><td>SOL</td><td>Bonk LaunchLab SOL pool tokens</td></tr>
+                    <tr><td><img src="../assets/bags.svg" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;border-radius:4px"><strong>Bags</strong></td><td>SOL</td><td>Bags.fm Virtual Curve tokens</td></tr>
+                    <tr><td><img src="../assets/usd1.webp" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;border-radius:4px"><strong>USD1</strong></td><td>USD1</td><td>USD1 LaunchLab tokens (paid in USD1)</td></tr>
+                    <tr><td><img src="../assets/usd1.webp" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;border-radius:4px"><strong>USD1 (SOL)</strong></td><td>SOL</td><td>USD1 LaunchLab tokens with auto SOL-to-USD1 swap</td></tr>
+                </tbody>
+            </table>
+
+            <h2>Bags Fee Sharing</h2>
+            <p>Configure how creator fees are split on Bags deploys:</p>
+            <ul>
+                <li><strong>Your Share</strong> — percentage of creator fees you keep (default 100%)</li>
+                <li><strong>Fee Claimers</strong> — add wallets that receive a share of creator fees. Total must equal 100%. Each claimer has a provider (Twitter, TikTok, Kick, GitHub), username, and share percentage.</li>
+            </ul>
+
+            <h2>Flash Deploy Keybind</h2>
+            <p>Set a keyboard shortcut to instantly open the Flash Deploy modal. Click the input and press your desired key combination. Supports modifier keys (Ctrl, Alt, Shift).</p>
+
+            <h2>Feature Toggles</h2>
+
+            <h3>222 Vamp Button on Pulse</h3>
+            <p><strong>Default: ON.</strong> Shows a 222 buy button next to each token on Axiom's Pulse homepage. Click it to instantly buy without opening the token page.</p>
+
+            <h3>222 Vamp Button on /meme/</h3>
+            <p><strong>Default: ON.</strong> Shows the 222 buy button on individual token pages.</p>
+
+            <h3>Flash Deploy</h3>
+            <p><strong>Default: ON.</strong> Enables the Flash Deploy modal for instant token creation. Deploy on PumpFun, Bonk, Bags, and USD1 LaunchLab. Drag and drop an image, and your initial buy is bundled into the same transaction.</p>
+
+            <h3>Popout New Tab</h3>
+            <p><strong>Default: ON.</strong> Opens newly deployed tokens in a new browser tab so you can monitor them immediately after launch.</p>
+        `
+    });
+    </script>
+</body>
+</html>

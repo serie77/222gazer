@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>222 Sniper — 222 Docs</title>
+    <link rel="icon" type="image/png" href="../assets/222-image.png">
+    <link rel="stylesheet" href="docs.css">
+</head>
+<body>
+    <div id="docs-app"></div>
+    <script src="template.js"></script>
+    <script>
+    renderDocsPage({
+        content: `
+            <h1>222 Sniper</h1>
+            <p class="subtitle">Four automated trading tools — dev sell, limit order, CA snipe, and interaction snipe.</p>
+
+            <h2>Automated Sniper (Dev Sell)</h2>
+            <p>Automatically buys tokens when the developer sells. When a dev dumps their tokens, the price craters — this sniper catches the dip and buys in.</p>
+
+            <h3>Settings</h3>
+            <table>
+                <thead>
+                    <tr><th>Setting</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Buy Amount (SOL)</strong></td><td>How much SOL to spend per snipe</td></tr>
+                    <tr><td><strong>Slippage (%)</strong></td><td>Maximum acceptable price movement</td></tr>
+                    <tr><td><strong>Validator Tip (SOL)</strong></td><td>Priority tip for faster landing</td></tr>
+                    <tr><td><strong>TX Fee (SOL)</strong></td><td>Compute unit price</td></tr>
+                    <tr><td><strong>MEV Protect</strong></td><td>Route through MEV-protected channels</td></tr>
+                    <tr><td><strong>Use Axiom TX</strong></td><td>Let Axiom handle the transaction instead of 222</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Wallets</h3>
+            <p>Select which wallets to use for automated snipes. Only checked wallets will execute.</p>
+
+            <h3>How to Use</h3>
+            <ol>
+                <li>Toggle the sniper <strong>ON</strong></li>
+                <li>Configure your buy amount and settings</li>
+                <li>Select your wallets</li>
+                <li>Save settings</li>
+                <li>Browse Axiom normally — when a dev sell is detected, 222 auto-buys</li>
+            </ol>
+
+            <blockquote>
+                <p>The DS sniper runs directly on Axiom and detects dev sells in real-time from the page.</p>
+            </blockquote>
+
+            <hr>
+
+            <h2>Limit Order</h2>
+            <p>Set a target market cap — 222 automatically buys when the token reaches that price.</p>
+
+            <h3>Settings</h3>
+            <table>
+                <thead>
+                    <tr><th>Setting</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Buy Amount (SOL)</strong></td><td>Amount to spend when the limit triggers</td></tr>
+                    <tr><td><strong>Slippage (%)</strong></td><td>Maximum price movement allowed</td></tr>
+                    <tr><td><strong>Validator Tip (SOL)</strong></td><td>Priority fee</td></tr>
+                    <tr><td><strong>TX Fee (SOL)</strong></td><td>Compute unit price</td></tr>
+                    <tr><td><strong>MEV Protect</strong></td><td>MEV protection toggle</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Wallets</h3>
+            <p>Select which wallets to use for limit order executions.</p>
+
+            <h3>How to Use</h3>
+            <ol>
+                <li>Toggle limit orders <strong>ON</strong></li>
+                <li>Set your default buy parameters</li>
+                <li>Navigate to a token page on Axiom</li>
+                <li>Set your target market cap using the limit order UI on the token page</li>
+                <li>222 monitors the price and auto-executes when the target is hit</li>
+            </ol>
+
+            <hr>
+
+            <h2>CA Sniper</h2>
+            <p>Instantly buy a token by clicking the 222 icon next to any Solana contract address (CA) on the web.</p>
+
+            <h3>Settings</h3>
+            <table>
+                <thead>
+                    <tr><th>Setting</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Buy Amount (SOL)</strong></td><td>Amount to spend per CA snipe</td></tr>
+                    <tr><td><strong>Slippage (%)</strong></td><td>Maximum price movement</td></tr>
+                    <tr><td><strong>Validator Tip (SOL)</strong></td><td>Priority fee</td></tr>
+                    <tr><td><strong>TX Fee (SOL)</strong></td><td>Compute unit price</td></tr>
+                    <tr><td><strong>MEV Protect</strong></td><td>MEV protection toggle</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Wallets</h3>
+            <p>Select which wallets to use for CA snipes.</p>
+
+            <h3>How to Use</h3>
+            <ol>
+                <li>Toggle CA sniper <strong>ON</strong></li>
+                <li>Configure settings and select wallets</li>
+                <li>When you see a CA on any page, click the 222 icon next to it</li>
+                <li>222 instantly executes a buy</li>
+            </ol>
+
+            <hr>
+
+            <h2>Interaction Snipe</h2>
+            <p>Monitor specific Twitter/X accounts and auto-buy tokens they interact with.</p>
+            <blockquote><p>Requires an API key with interaction snipe permissions.</p></blockquote>
+
+            <h3>How to Use</h3>
+            <ol>
+                <li>Click <strong>Open Live Feed</strong> to open the monitoring window</li>
+                <li>Configure which accounts and interactions to watch</li>
+                <li>When a matching interaction is detected, 222 auto-executes</li>
+            </ol>
+
+            <h3>Execution History</h3>
+            <p>View a log of all snipe executions at the bottom of the Sniper panel. Click <strong>Clear</strong> to reset.</p>
+        `
+    });
+    </script>
+</body>
+</html>

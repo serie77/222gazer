@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation — 222</title>
+    <link rel="icon" type="image/png" href="../assets/222-image.png">
+    <link rel="stylesheet" href="docs.css">
+    <style>
+        .docs-index-layout {
+            display: flex;
+            padding-top: 80px;
+            min-height: 100vh;
+        }
+
+        .docs-index-sidebar {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            bottom: 0;
+            width: 240px;
+            padding: 20px 16px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .docs-index-main {
+            margin-left: 240px;
+            flex: 1;
+            max-width: 640px;
+            padding: 0 60px 100px;
+        }
+
+        .docs-index-title {
+            font-family: 'Ethereal', serif;
+            font-size: 36px;
+            font-weight: 900;
+            letter-spacing: 0.02em;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .docs-index-sub {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.35);
+            margin-bottom: 48px;
+        }
+
+        .docs-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .docs-list-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            text-decoration: none;
+            transition: all 0.15s ease;
+        }
+
+        .docs-list-item:first-child {
+            padding-top: 0;
+        }
+
+        .docs-list-item:last-child {
+            border-bottom: none;
+        }
+
+        .docs-list-item:hover .docs-list-item-title {
+            color: #fff;
+        }
+
+        .docs-list-item-left {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .docs-list-item-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.75);
+            transition: color 0.15s;
+        }
+
+        .docs-list-item-desc {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .docs-list-item-arrow {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.1);
+            transition: all 0.15s;
+        }
+
+        .docs-list-item:hover .docs-list-item-arrow {
+            color: rgba(255, 255, 255, 0.4);
+            transform: translateX(3px);
+        }
+
+        @media (max-width: 768px) {
+            .docs-index-sidebar { display: none; }
+            .docs-index-main {
+                margin-left: 0;
+                padding: 0 24px 80px;
+            }
+            .docs-index-title { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Nav -->
+    <nav class="docs-nav">
+        <a href="../index.html" class="docs-nav-brand">
+            <img src="../assets/222-image.png" alt="222" class="docs-nav-logo">
+            <span class="docs-nav-title">222</span>
+        </a>
+        <div class="docs-nav-links">
+            <a href="index.html"><img src="../assets/gitbook.svg" alt="" class="docs-nav-icon">Docs</a>
+            <a href="https://discord.gg/your-invite" target="_blank"><img src="../assets/discord.svg" alt="" class="docs-nav-icon">Discord</a>
+        </div>
+    </nav>
+
+    <div class="docs-index-layout">
+        <aside class="docs-index-sidebar">
+            <div class="docs-search" id="index-search">
+                <svg class="docs-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" class="docs-search-input" placeholder="Search docs..." spellcheck="false">
+                <div class="docs-search-results"></div>
+            </div>
+            <div class="sidebar-section-title">Documentation</div>
+            <a href="getting-started.html" class="sidebar-link">Getting Started</a>
+            <a href="trading-accounts.html" class="sidebar-link">Trading Accounts</a>
+            <a href="trading-settings.html" class="sidebar-link">Trading Settings</a>
+            <a href="deploy-settings.html" class="sidebar-link">Deploy Settings</a>
+            <a href="more-settings.html" class="sidebar-link">More Settings</a>
+            <a href="sniper.html" class="sidebar-link">222 Sniper</a>
+            <a href="supported-platforms.html" class="sidebar-link">Supported Platforms</a>
+            <a href="faq.html" class="sidebar-link">FAQ</a>
+        </aside>
+
+        <div class="docs-index-main">
+            <h1 class="docs-index-title">Documentation</h1>
+            <p class="docs-index-sub">Everything you need to know about 222.</p>
+
+            <div class="docs-list">
+                <a href="getting-started.html" class="docs-list-item">
+                    <div class="docs-list-item-left">
+                        <span class="docs-list-item-title">Getting Started</span>
+                        <span class="docs-list-item-desc">Install, connect, and set up your first wallet</span>
+                    </div>
+                    <span class="docs-list-item-arrow">&rarr;</span>
+                </a>
+                <a href="trading-accounts.html" class="docs-list-item">
+                    <div class="docs-list-item-left">
+                        <span class="docs-list-item-title">Trading Accounts</span>
+                        <span class="docs-list-item-desc">Wallets, groups, and multi-wallet trading</span>
+                    </div>
+                    <span class="docs-list-item-arrow">&rarr;</span>
+                </a>
+                <a href="trading-settings.html" class="docs-list-item">
+                    <div class="docs-list-item-left">
+                        <span class="docs-list-item-title">Trading Settings</span>
+                        <span class="docs-list-item-desc">Presets, slippage, tips, MEV, and the trade bar</span>
+                    </div>
+                    <span class="docs-list-item-arrow">&rarr;</span>
+                </a>
+                <a href="deploy-settings.html" class="docs-list-item">
+                    <div class="docs-list-item-left">
+                        <span class="docs-list-item-title">Deploy Settings</span>
+                        <span class="docs-list-item-desc">Flash Deploy, buy amounts, and instant deploy presets</span>
+                    </div>
+                    <span class="docs-list-item-arrow">&rarr;</span>
+                </a>
+                <a href="more-settings.html" class="docs-list-item">
+                    <div class="docs-list-item-left">
+                        <span class="docs-list-item-title">More Settings</span>
+                        <span class="docs-list-item-desc">Customization, performance, and advanced options</span>
+                    </div>
+                    <span class="docs-list-item-arrow">&rarr;</span>
+                </a>
+                <a href="sniper.html" class="docs-list-item">
+                    <div class="docs-list-item-left">
+                        <span class="docs-list-item-title">222 Sniper</span>
+                        <span class="docs-list-item-desc">Dev sell, limit orders, CA sniper, and interaction snipes</span>
+                    </div>
+                    <span class="docs-list-item-arrow">&rarr;</span>
+                </a>
+                <a href="supported-platforms.html" class="docs-list-item">
+                    <div class="docs-list-item-left">
+                        <span class="docs-list-item-title">Supported Platforms</span>
+                        <span class="docs-list-item-desc">PumpFun, Bonk, USD1, Bags, Raydium, and more</span>
+                    </div>
+                    <span class="docs-list-item-arrow">&rarr;</span>
+                </a>
+                <a href="faq.html" class="docs-list-item">
+                    <div class="docs-list-item-left">
+                        <span class="docs-list-item-title">FAQ</span>
+                        <span class="docs-list-item-desc">Common questions about trading, deploying, and performance</span>
+                    </div>
+                    <span class="docs-list-item-arrow">&rarr;</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="template.js"></script>
+    <script>
+    // Init search on index page (not using renderDocsPage since index has custom layout)
+    buildSearch(document.getElementById('index-search'));
+
+    // / keyboard shortcut
+    document.addEventListener('keydown', function (e) {
+        const input = document.querySelector('.docs-search-input');
+        if (e.key === '/' && document.activeElement !== input && !e.ctrlKey && !e.metaKey) {
+            e.preventDefault();
+            input.focus();
+        }
+    });
+    </script>
+</body>
+</html>

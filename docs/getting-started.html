@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started — 222 Docs</title>
+    <link rel="icon" type="image/png" href="../assets/222-image.png">
+    <link rel="stylesheet" href="docs.css">
+</head>
+<body>
+    <div id="docs-app"></div>
+    <script src="template.js"></script>
+    <script>
+    renderDocsPage({
+        content: `
+            <h1>Getting Started</h1>
+            <p class="subtitle">Install the extension, connect to your server, and set up your first wallet.</p>
+
+            <h2>Installation</h2>
+            <ol>
+                <li>Download the latest 222 extension <code>.zip</code> file</li>
+                <li>Open Chrome and go to <code>chrome://extensions</code></li>
+                <li><strong>Enable Developer mode</strong> (top right toggle)</li>
+                <li>Click <strong>Load unpacked</strong> and select the extracted extension folder</li>
+                <li>Pin the 222 extension to your toolbar for easy access</li>
+            </ol>
+
+            <h2>Connecting</h2>
+            <ol>
+                <li>Click the 222 icon in your toolbar (or right-click and open in a new tab for a larger view)</li>
+                <li><strong>Select your region</strong> — choose the closest one for lowest latency:
+                    <ul>
+                        <li>North America</li>
+                        <li>Europe</li>
+                        <li>Asia Pacific</li>
+                    </ul>
+                </li>
+                <li><strong>Enter your API key</strong> (optional) — leave blank to connect without one</li>
+                <li>Click <strong>Connect</strong></li>
+            </ol>
+            <p>Once connected, the status pill in the top-right will turn green and show "Connected".</p>
+
+            <h2>First Steps</h2>
+            <p>After connecting:</p>
+            <ol>
+                <li><strong>Generate or import wallets</strong> in the Trading Accounts section</li>
+                <li><strong>Set your buy/sell settings</strong> in Preset Details (validator tip, slippage, tx fee)</li>
+                <li><strong>Fund your wallets</strong> with SOL</li>
+                <li>Navigate to any token on Axiom — you'll see the 222 trade bar at the bottom</li>
+            </ol>
+
+            <h2>Header Buttons</h2>
+            <table>
+                <thead>
+                    <tr><th>Button</th><th>What it does</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Moon icon</strong></td><td>Toggle dark mode for the 222 popup</td></tr>
+                    <tr><td><strong>Popout icon</strong></td><td>Open 222 in a full browser tab</td></tr>
+                    <tr><td><strong>Power icon</strong></td><td>Disconnect from server</td></tr>
+                    <tr><td><strong>Export</strong></td><td>Export all wallets, presets, and settings as a JSON backup</td></tr>
+                    <tr><td><strong>Import</strong></td><td>Restore wallets, presets, and settings from a JSON file</td></tr>
+                </tbody>
+            </table>
+
+            <h2>Updates</h2>
+            <p>The 222 panel shows your current extension version. When a new version is available, a <strong>Download Update</strong> button appears automatically. Click it to download the latest <code>.zip</code>, then reload the extension in <code>chrome://extensions</code>.</p>
+
+            <h2>DS Sniper Only Mode</h2>
+            <p>On the login screen, there's a <strong>DS sniper only</strong> toggle in the top right. When enabled, 222 runs only the dev sell sniper on Axiom without connecting to the full server. Useful if you just want automated sniping without the trading UI.</p>
+        `
+    });
+    </script>
+</body>
+</html>

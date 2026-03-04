@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Settings — 222 Docs</title>
+    <link rel="icon" type="image/png" href="../assets/222-image.png">
+    <link rel="stylesheet" href="docs.css">
+</head>
+<body>
+    <div id="docs-app"></div>
+    <script src="template.js"></script>
+    <script>
+    renderDocsPage({
+        content: `
+            <h1>More Settings</h1>
+            <p class="subtitle">Customization, performance, and advanced options.</p>
+
+            <h2>Visual Customization</h2>
+
+            <h3>222 Wallet Highlight Color</h3>
+            <p>Colors your wallets in Axiom's wallet dropdown so you can easily identify which wallets are imported into 222.</p>
+            <p>Options: Blue/Purple (default), Green/Teal, Pink/Purple, Orange/Red, Cyan/Blue, or Disabled.</p>
+
+            <h3>Toast Notification Style</h3>
+            <p>Choose how buy/sell confirmations appear on screen.</p>
+            <ul>
+                <li><strong>Legacy</strong> — default notification style</li>
+                <li><strong>Midnight Glass</strong> — glassmorphism dark style</li>
+                <li><strong>Aurora</strong> — colorful gradient style</li>
+            </ul>
+
+            <h3>Stack Toasts</h3>
+            <p><strong>Default: OFF.</strong> When on, notifications stack on top of each other instead of replacing the previous one. Useful for rapid-fire trades.</p>
+
+            <h3>Instant Trade Bar Style</h3>
+            <p>Customize the appearance of the trade bar. Options include: Dark, Transparent, Glass, solid colors (Purple, Blue, Cyan, Green, Orange, Pink, Red), and gradients (Purple, Blue, Cyan, Sunset, Aurora, Red).</p>
+
+            <h3>Use Wallet Group Color</h3>
+            <p><strong>Default: OFF.</strong> Tints the trade bar with the color of your currently active wallet group.</p>
+
+            <h2>Sync</h2>
+
+            <h3>Axiom Wallet Sync</h3>
+            <p><strong>Default: ON.</strong> Syncs wallet selection between Axiom's native wallet picker and 222. When you select a wallet in Axiom, 222 mirrors the selection, and vice versa.</p>
+
+            <h2>Performance</h2>
+
+            <h3>Raw Mode</h3>
+            <p><strong>Default: OFF.</strong> Builds transactions using raw instruction construction instead of SDK calls. Significantly faster (sub-millisecond vs 30-100ms). Supported on PumpFun, PumpSwap, Bonk LaunchLab, and USD1 LaunchLab.</p>
+
+            <h3>Rust Deploy</h3>
+            <p><strong>Default: OFF.</strong> Uses a native Rust transaction builder for token deployments instead of JavaScript. Build times drop to ~500 microseconds. Supports PumpFun, Bonk SOL, and USD1 LaunchLab deploys.</p>
+
+            <h3>Cashback Rewards</h3>
+            <p><strong>Default: ON.</strong> Tracks your PumpFun and PumpSwap volume so you can claim cashback rewards. Cashback is automatically claimed when you use the <strong>Close ATAs</strong> button. Free SOL — keep this on.</p>
+        `
+    });
+    </script>
+</body>
+</html>

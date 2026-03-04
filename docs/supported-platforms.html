@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supported Platforms — 222 Docs</title>
+    <link rel="icon" type="image/png" href="../assets/222-image.png">
+    <link rel="stylesheet" href="docs.css">
+</head>
+<body>
+    <div id="docs-app"></div>
+    <script src="template.js"></script>
+    <script>
+    renderDocsPage({
+        content: `
+            <h1>Supported Platforms</h1>
+            <p class="subtitle">222 automatically detects which platform a token is on and routes transactions accordingly.</p>
+
+            <h2>Trading</h2>
+            <table>
+                <thead>
+                    <tr><th>Platform</th><th>Quote Token</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><img src="../assets/pump.svg" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;border-radius:4px"><strong>PumpFun</strong></td><td>SOL</td><td>Full support (buy/sell)</td></tr>
+                    <tr><td><img src="../assets/pump.svg" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;border-radius:4px"><strong>PumpSwap</strong></td><td>SOL</td><td>Full support (buy/sell)</td></tr>
+                    <tr><td><img src="../assets/pump.svg" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;border-radius:4px"><strong>Mayhem</strong></td><td>SOL</td><td>Full support (PumpFun variant)</td></tr>
+                    <tr><td><img src="../assets/bonk.svg" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;border-radius:4px"><strong>Bonk LaunchLab</strong></td><td>SOL</td><td>Full support (buy/sell)</td></tr>
+                    <tr><td><img src="../assets/bonk.svg" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;border-radius:4px"><strong>Bonkers LaunchLab</strong></td><td>SOL or USD1</td><td>Full support (buy/sell)</td></tr>
+                    <tr><td><img src="../assets/usd1.webp" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;border-radius:4px"><strong>USD1 LaunchLab</strong></td><td>USD1</td><td>Full support (auto SOL-to-USD1 swap)</td></tr>
+                    <tr><td><img src="../assets/bonk.svg" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;border-radius:4px"><strong>Bonk Graduated</strong></td><td>SOL</td><td>Full support (Raydium CPMM)</td></tr>
+                    <tr><td><img src="../assets/bags.svg" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;border-radius:4px"><strong>Bags (Virtual Curve)</strong></td><td>SOL</td><td>Full support (buy/sell)</td></tr>
+                    <tr><td><img src="../assets/bags.svg" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;border-radius:4px"><strong>Bags Graduated</strong></td><td>SOL</td><td>Full support (Meteora AMM V2)</td></tr>
+                    <tr><td><img src="../assets/solana.svg" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;border-radius:4px"><strong>Raydium CPMM</strong></td><td>SOL</td><td>Full support</td></tr>
+                    <tr><td><img src="../assets/solana.svg" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;border-radius:4px"><strong>Raydium V4</strong></td><td>SOL</td><td>Jupiter routing</td></tr>
+                    <tr><td><img src="../assets/solana.svg" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;border-radius:4px"><strong>Meteora AMM V2</strong></td><td>SOL</td><td>Full support</td></tr>
+                </tbody>
+            </table>
+
+            <h2>Deploying</h2>
+            <p>222 can deploy tokens on these platforms via Flash Deploy:</p>
+            <table>
+                <thead>
+                    <tr><th>Platform</th><th>Quote Token</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><img src="../assets/pump.svg" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;border-radius:4px"><strong>PumpFun</strong></td><td>SOL</td><td>Standard PumpFun bonding curve</td></tr>
+                    <tr><td><img src="../assets/bonk.svg" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;border-radius:4px"><strong>Bonk (SOL)</strong></td><td>SOL</td><td>Raydium LaunchLab with SOL pools</td></tr>
+                    <tr><td><img src="../assets/usd1.webp" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;border-radius:4px"><strong>USD1 LaunchLab</strong></td><td>USD1</td><td>Raydium LaunchLab with USD1 pools</td></tr>
+                    <tr><td><img src="../assets/bags.svg" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;border-radius:4px"><strong>Bags</strong></td><td>SOL</td><td>Bags.fm Virtual Curve</td></tr>
+                </tbody>
+            </table>
+
+            <h2>How Detection Works</h2>
+            <p>222 reads Axiom's UI badges (the small platform icons next to token names) to determine which platform a token is on. It also checks for platform-specific links like <code>pump.fun/coin/</code>, <code>bonk.fun/token/</code>, and <code>bags.fm/</code>. This detection happens automatically — you never need to manually specify the platform.</p>
+            <p>For tokens 222 doesn't recognize, the buy/sell action passes through to Axiom's native trading.</p>
+        `
+    });
+    </script>
+</body>
+</html>

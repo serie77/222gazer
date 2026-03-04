@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ — 222 Docs</title>
+    <link rel="icon" type="image/png" href="../assets/222-image.png">
+    <link rel="stylesheet" href="docs.css">
+</head>
+<body>
+    <div id="docs-app"></div>
+    <script src="template.js"></script>
+    <script>
+    renderDocsPage({
+        content: `
+            <h1>FAQ</h1>
+            <p class="subtitle">Common questions about trading, deploying, snipers, and performance.</p>
+
+            <h2>General</h2>
+
+            <h3>Does 222 work on other DEXs besides Axiom?</h3>
+            <p>No. 222 is built specifically for Axiom. The trade bar, snipers, and deploy features only work on axiom.trade.</p>
+
+            <h3>Are my private keys safe?</h3>
+            <p>Yes. Keys are generated locally in your browser and stored encrypted in Chrome's local storage. They never leave your machine. Always back up your keys using the Export feature.</p>
+
+            <h3>Do I need an API key?</h3>
+            <p>Optional. You can connect without one. An API key unlocks additional features like Interaction Snipe.</p>
+
+            <h3>Can I use 222 on multiple devices?</h3>
+            <p>Yes. Use Export/Import to transfer wallets and settings between devices. Note that wallet imports are region-locked — you can only import wallets into the same region they were exported from.</p>
+
+            <hr>
+
+            <h2>Trading</h2>
+
+            <h3>Why did my trade fail?</h3>
+            <ul>
+                <li><strong>Insufficient balance</strong> — not enough SOL or tokens</li>
+                <li><strong>Slippage too low</strong> — increase slippage for volatile tokens</li>
+                <li><strong>Token migrated</strong> — the token may have graduated to a different pool. Refresh the page</li>
+            </ul>
+
+            <h3>What's the difference between Validator Tip and TX Fee?</h3>
+            <p>The <strong>validator tip</strong> incentivizes validators to include your transaction sooner. The <strong>TX fee</strong> is the compute unit price. Both increase your chances of landing, but the tip is generally more impactful.</p>
+
+            <h3>What does MEV Protection do?</h3>
+            <p>Routes your transaction through private channels so sandwich bots can't frontrun your trade. Slightly slower, but prevents you from getting sandwiched on large buys.</p>
+
+            <h3>What does "Close ATAs" do?</h3>
+            <p>Closes empty token accounts (ATAs) and reclaims the rent SOL. If Cashback Rewards is enabled, it also claims earned PumpFun/PumpSwap cashback.</p>
+
+            <hr>
+
+            <h2>Deploy</h2>
+
+            <h3>What is Flash Deploy?</h3>
+            <p>Create and launch new tokens in seconds. Open the deploy modal, fill in name/symbol/image, pick a platform, and deploy. Your initial buy is bundled into the same transaction.</p>
+
+            <h3>What platforms can I deploy on?</h3>
+            <p>PumpFun (SOL), Bonk LaunchLab (SOL), USD1 LaunchLab (USD1), and Bags (SOL).</p>
+
+            <hr>
+
+            <h2>Sniper</h2>
+
+            <h3>Does the dev sell sniper work on all platforms?</h3>
+            <p>It detects dev sells on Axiom's Pulse feed. Works best on PumpFun and PumpSwap tokens.</p>
+
+            <h3>Can I run the sniper without the full extension?</h3>
+            <p>Yes. Enable <strong>DS Sniper Only</strong> mode on the login screen. It runs the sniper without connecting to the 222 server.</p>
+
+            <h3>How does the CA Sniper work?</h3>
+            <p>222 detects Solana contract addresses on web pages and adds a small 222 icon next to them. Click the icon to instantly buy that token.</p>
+
+            <hr>
+
+            <h2>Performance</h2>
+
+            <h3>What is Raw Mode?</h3>
+            <p>Builds transactions using direct instruction construction instead of SDK calls. 10-100x faster (sub-millisecond). Experimental but recommended for competitive scenarios.</p>
+
+            <h3>What is Rust Deploy?</h3>
+            <p>Uses a native Rust binary to build deploy transactions. Build times drop to ~500 microseconds. Supports PumpFun, Bonk, and USD1 deploys.</p>
+
+            <h3>Should I enable Cashback Rewards?</h3>
+            <p>Yes. It's free SOL. PumpFun and PumpSwap offer cashback on trading volume. Claim it via the Close ATAs button.</p>
+        `
+    });
+    </script>
+</body>
+</html>

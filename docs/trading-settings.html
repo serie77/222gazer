@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Settings — 222 Docs</title>
+    <link rel="icon" type="image/png" href="../assets/222-image.png">
+    <link rel="stylesheet" href="docs.css">
+</head>
+<body>
+    <div id="docs-app"></div>
+    <script src="template.js"></script>
+    <script>
+    renderDocsPage({
+        content: `
+            <h1>Trading Settings</h1>
+            <p class="subtitle">Presets, slippage, tips, MEV protection, and the trade bar.</p>
+
+            <h2>Quick Actions (Presets)</h2>
+            <p>Save up to <strong>3 presets</strong> with different trading configurations and switch between them instantly.</p>
+            <ul>
+                <li><strong>New Preset</strong> — creates a preset from your current settings</li>
+                <li><strong>Edit Active</strong> — modify the currently selected preset</li>
+                <li><strong>Delete</strong> — remove a preset</li>
+            </ul>
+
+            <h2>Preset Details</h2>
+            <p>Configure your trading parameters. Settings are saved per-preset.</p>
+
+            <h3>Buy Settings</h3>
+            <table>
+                <thead>
+                    <tr><th>Setting</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Validator Tip (SOL)</strong></td><td>Priority tip sent to validators. Higher = faster landing</td></tr>
+                    <tr><td><strong>Transaction Fee (SOL)</strong></td><td>Compute unit price for the transaction</td></tr>
+                    <tr><td><strong>Slippage (%)</strong></td><td>Maximum acceptable price movement. For volatile memecoins, 15-50% is common</td></tr>
+                    <tr><td><strong>MEV Protection</strong></td><td>Routes through MEV-protected channels to prevent sandwich attacks</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Sell Settings</h3>
+            <p>Same fields as buy, applied to sell transactions. You can configure buy and sell independently — for example, higher slippage on buys but lower on sells.</p>
+
+            <h3>Split Buy Amount</h3>
+            <p><strong>Default: ON.</strong> When on, your buy amount is divided equally across all selected wallets. When off, each wallet buys the full amount independently.</p>
+
+            <h3>Success Sound</h3>
+            <p>A sound effect that plays when your transaction lands. Options: Kaching, Bell, Beep, Sparkle, Osu Hitsound. Adjust volume with the slider and click <strong>Preview Sound</strong> to test.</p>
+
+            <h2>The Trade Bar</h2>
+            <p>When you're on a token page on Axiom, 222 injects a trade bar at the bottom of the screen.</p>
+
+            <h3>Buy Buttons</h3>
+            <p>Click any buy amount button to instantly buy with your selected wallets. The amounts are your configured instant deploy presets.</p>
+
+            <h3>Sell Buttons</h3>
+            <p>Percentage-based sells: 25%, 50%, 75%, 100% of your token holdings.</p>
+
+            <h3>Close ATAs</h3>
+            <p>Closes empty token accounts to reclaim rent SOL. If Cashback Rewards is enabled, it also claims any earned PumpFun/PumpSwap cashback.</p>
+        `
+    });
+    </script>
+</body>
+</html>

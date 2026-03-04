@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>222</title>
+    <link rel="icon" type="image/png" href="assets/222-image.png">
+    <style>
+        @font-face {
+            font-family: 'Ethereal';
+            src: url('assets/font/EtherealDemo-Black.otf') format('opentype');
+            font-weight: 900;
+        }
+        @font-face {
+            font-family: 'Ethereal';
+            src: url('assets/font/EtherealDemo-Bold.otf') format('opentype');
+            font-weight: 700;
+        }
+        @font-face {
+            font-family: 'Ethereal';
+            src: url('assets/font/EtherealDemo-Medium.otf') format('opentype');
+            font-weight: 500;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #f7f2ff;
+            background: #050510;
+            overflow-x: hidden;
+        }
+
+        /* ===== NAV ===== */
+        .nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 10px 12px 10px 16px;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 100px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-logo {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+        }
+
+        .nav-title {
+            font-family: 'Ethereal', serif;
+            font-size: 18px;
+            font-weight: 900;
+            color: #e0d6f0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 8px 18px;
+            border-radius: 100px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .nav-icon {
+            width: 14px;
+            height: 14px;
+            opacity: 0.5;
+            filter: brightness(0) invert(1);
+        }
+
+        .nav-links a:hover .nav-icon {
+            opacity: 0.8;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('222background.jpg') center/cover no-repeat;
+            z-index: 0;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 40%,
+                    rgba(5, 5, 16, 0.5) 0%,
+                    rgba(5, 5, 16, 0.7) 50%,
+                    rgba(5, 5, 16, 0.95) 100%),
+                linear-gradient(to bottom,
+                    rgba(5, 5, 16, 0.6) 0%,
+                    rgba(5, 5, 16, 0.55) 40%,
+                    rgba(5, 5, 16, 0.75) 70%,
+                    rgba(5, 5, 16, 1) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            padding: 40px 20px;
+        }
+
+        .hero-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: contain;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4),
+                        0 0 60px rgba(102, 126, 234, 0.2),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            animation: float 10s ease-in-out infinite;
+            margin-bottom: 28px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .hero-title {
+            font-family: 'Ethereal', serif;
+            font-size: 80px;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero-headline {
+            font-size: 17px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.55);
+            max-width: 440px;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+            margin-bottom: 10px;
+        }
+
+        .hero-whisper {
+            font-size: 13px;
+            font-weight: 500;
+            font-style: italic;
+            color: rgba(167, 139, 250, 0.5);
+            letter-spacing: 0.04em;
+            margin-bottom: 36px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 32px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-decoration: none;
+            border: 1px solid transparent;
+        }
+
+        .btn-icon {
+            width: 16px;
+            height: 16px;
+            opacity: 0.8;
+            filter: brightness(0) invert(1);
+        }
+
+        .btn-primary .btn-icon {
+            opacity: 0.6;
+            filter: brightness(0) invert(0);
+        }
+
+        .btn-primary {
+            background: rgba(255, 255, 255, 0.9);
+            color: #0a0a18;
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-primary:hover {
+            background: #fff;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.08);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(12px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.14);
+            color: rgba(255, 255, 255, 0.85);
+            transform: translateY(-1px);
+        }
+
+        /* ===== FEATURES ===== */
+        .features {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 80px 40px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .feature {
+            display: flex;
+            align-items: baseline;
+            gap: 20px;
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .feature:last-child {
+            border-bottom: none;
+        }
+
+        .feature h4 {
+            font-size: 13px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 0.02em;
+            min-width: 160px;
+            flex-shrink: 0;
+        }
+
+        .feature p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.35);
+            line-height: 1.6;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            text-align: center;
+            padding: 48px 40px;
+            color: rgba(255, 255, 255, 0.15);
+            font-size: 12px;
+            letter-spacing: 0.03em;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .footer-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .footer-link:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-link img {
+            width: 16px;
+            height: 16px;
+            opacity: 0.25;
+            filter: brightness(0) invert(1);
+            transition: opacity 0.2s ease;
+        }
+
+        .footer-link:hover img {
+            opacity: 0.6;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav {
+                top: 12px;
+                gap: 20px;
+                padding: 8px 10px 8px 14px;
+            }
+            .nav-links a { padding: 6px 12px; font-size: 12px; }
+            .hero-title { font-size: 56px; }
+            .hero-headline { font-size: 14px; padding: 0 20px; }
+            .hero-buttons { flex-direction: column; width: 100%; }
+            .btn { width: 100%; text-align: center; }
+            .features {
+                padding: 60px 20px 40px;
+            }
+            .feature {
+                flex-direction: column;
+                gap: 6px;
+            }
+            .feature h4 { min-width: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav class="nav">
+        <a href="index.html" class="nav-brand">
+            <img src="assets/222-image.png" alt="222" class="nav-logo">
+            <span class="nav-title">222</span>
+        </a>
+        <div class="nav-links">
+            <a href="docs/index.html"><img src="assets/gitbook.svg" alt="" class="nav-icon">Docs</a>
+            <a href="https://discord.gg/your-invite" target="_blank"><img src="assets/discord.svg" alt="" class="nav-icon">Discord</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <img src="assets/222-image.png" alt="222" class="hero-logo">
+            <h1 class="hero-title">222</h1>
+            <p class="hero-headline">
+                The most advanced on-chain tools, built into one extension.
+            </p>
+            <p class="hero-whisper">Welcome to your edge.</p>
+            <div class="hero-buttons">
+                <a href="docs/getting-started.html" class="btn btn-primary"><img src="assets/gitbook.svg" alt="" class="btn-icon">View Docs</a>
+                <a href="https://discord.gg/your-invite" target="_blank" class="btn btn-secondary"><img src="assets/discord.svg" alt="" class="btn-icon">Join Discord</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <div class="features">
+        <div class="feature">
+            <h4>Instant Trading</h4>
+            <p>Experience seamless, blazing fast transactions consistently. You can finally be first tx now.</p>
+        </div>
+        <div class="feature">
+            <h4>Extremely Low Fees</h4>
+            <p>Lowest fees out of any trading/deploy tool. Size in and out of coins without paying 1% or having to use Jupiter.</p>
+        </div>
+        <div class="feature">
+            <h4>Automation</h4>
+            <p>Multiple automation tools (sniping, etc).</p>
+        </div>
+        <div class="feature">
+            <h4>Flash Deploy</h4>
+            <p>Launch tokens and vamps on Pump, Bonk, USD1, and Bags in record speeds.</p>
+        </div>
+        <div class="feature">
+            <h4>Constant Updates</h4>
+            <p>Trade with peace of mind knowing that 222 is constantly being worked on, with new features to try out all the time.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="docs/index.html" class="footer-link"><img src="assets/gitbook.svg" alt="Docs"></a>
+            <a href="https://discord.gg/your-invite" target="_blank" class="footer-link"><img src="assets/discord.svg" alt="Discord"></a>
+        </div>
+        <span>222</span>
+    </footer>
+
+</body>
+</html>
